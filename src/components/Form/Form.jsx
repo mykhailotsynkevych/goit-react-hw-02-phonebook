@@ -29,7 +29,6 @@ class Form extends Component {
     return (
       <>
             <form onSubmit={this.handleSubmit} className={s.form}>
-                <h3 className={s.title}>Phonebook</h3>
           <label className={s.form}>
             <span> Name </span>
             <input

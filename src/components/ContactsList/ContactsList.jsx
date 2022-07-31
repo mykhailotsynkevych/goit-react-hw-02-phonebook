@@ -1,14 +1,15 @@
 import s from './Contacts.module.css';
+// import ContactsEl from './ContactsEl'
 
-const Contacts = ({ contacts }) => {
+const ContactsList = ({ contactsList }) => {
   return (
     <div className={s.wrap}>
-      <h3 className={s.title}>Contacts</h3>
       <ul className={s.list} >
-        {contacts.map(contactEl => (
+        {contactsList.map(contactEl => (
           <li key={contactEl.id} className={s.item}>
                 <p className={s.discription}>{contactEl.name}</p>
-                <p className={s.discription}>{contactEl.number}</p>
+            <p className={s.discription}>{contactEl.number}</p>
+            <button className={s.button}>Удалить</button>
           </li>
         ))}
       </ul>
@@ -16,4 +17,4 @@ const Contacts = ({ contacts }) => {
   );
 };
 
-export default Contacts;
+export default ContactsList;
