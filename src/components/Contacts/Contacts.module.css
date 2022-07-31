@@ -1,0 +1,24 @@
+.item {
+    display: flex;
+}
+
+.wrap {
+        width: 300px;
+        padding-top: 20px;
+            margin: 5px;
+            display: flex;
+            flex-direction: column;
+}
+
+.title {
+    margin: 5px;
+}
+
+.discription {
+    margin: 5px;
+}
+
+.list {
+    margin: 0px;
+    padding: 0px;
+}

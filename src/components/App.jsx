@@ -1,21 +1,26 @@
 import React from 'react';
 
+import Form from './Form/Form';
+import Contacts from './Contacts/Contacts';
+
 export class App extends React.Component {
 state = {
   contacts: [],
   name: ''
-}
+  }
+
+    addContact = data => {
+      this.setState((prevState) => ({ contacts: [...prevState.contacts, data] }));
+      console.log(this.state.contacts)
+  };
+
 
   render() {
     return (
-      <form>
-      <input
-  type="text"
-  name="name"
-  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-  required
-        />
-   </form> );
+    <>
+    <Form onSubmit={this.addContact}/>
+    <Contacts contacts={this.state.contacts}/>
+   </>);
+   
   }
 }
