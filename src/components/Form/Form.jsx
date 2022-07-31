@@ -11,12 +11,19 @@ class Form extends Component {
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
+
+ 
+
   };
 
   handleSubmit = e => {
     e.preventDefault();
+    
     const { name, number } = this.state;
     this.props.onSubmit({ name, number, id: nanoid() });
+    // this.props.onHandleCompare({name});
+
+    
 
     this.reset();
   };

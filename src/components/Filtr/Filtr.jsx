@@ -7,7 +7,7 @@ const Filtr = ({value, onChange}) => {
     return (
       <>
           <label >
-            <span> Filtr </span>
+            <span> Filtr by Name </span>
             <input
               type="text"
               name="name"
