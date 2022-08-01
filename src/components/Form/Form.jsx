@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import s from './Form.module.css';
@@ -21,9 +23,7 @@ class Form extends Component {
     
     const { name, number } = this.state;
     this.props.onSubmit({ name, number, id: nanoid() });
-    // this.props.onHandleCompare({name});
-
-    
+    // this.props.onHandleCompare();
 
     this.reset();
   };
@@ -66,5 +66,10 @@ class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  value: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default Form;

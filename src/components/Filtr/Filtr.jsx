@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from "react";
 
 const Filtr = ({value, onChange}) => {
@@ -22,5 +23,9 @@ const Filtr = ({value, onChange}) => {
     );
   }
 
+Filtr.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default Filtr;
