@@ -2,9 +2,6 @@ import PropTypes from 'prop-types';
 import React from "react";
 
 const Filtr = ({value, onChange}) => {
-
-
-
     return (
       <>
           <label >
@@ -24,7 +21,7 @@ const Filtr = ({value, onChange}) => {
   }
 
 Filtr.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 

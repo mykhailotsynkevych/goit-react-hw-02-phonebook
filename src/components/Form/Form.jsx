@@ -13,9 +13,6 @@ class Form extends Component {
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-
- 
-
   };
 
   handleSubmit = e => {
@@ -23,7 +20,6 @@ class Form extends Component {
     
     const { name, number } = this.state;
     this.props.onSubmit({ name, number, id: nanoid() });
-    // this.props.onHandleCompare();
 
     this.reset();
   };
@@ -68,7 +64,6 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  value: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 

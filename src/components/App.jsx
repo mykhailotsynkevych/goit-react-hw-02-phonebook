@@ -7,7 +7,7 @@ import ContactsList from './ContactsList/ContactsList';
 export class App extends React.Component {
   state = {
     contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+      { id: 'id-1', name: 'R', number: '459-12-56' },
       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
@@ -16,24 +16,15 @@ export class App extends React.Component {
   };
 
   addContact = data => {
+
+    if (this.state.contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
+      return alert("This name is already as contact")
+    }
+      
     this.setState(prevState =>
       ({ contacts: [...prevState.contacts, data] }));
   };
 
-  //   handleCompare = name => {
-  //   this.setState(prevState => ({
-  //   contacts: prevState.contacts.filter(contact => contact.name === name),
-  //   }));
-  //   if ([name] === value) {
-              // console.log('hi')
-  //           }
-  // };
-
-  // handleCompare = name} => {
-  //   this.setState(prevState => ({
-  //   contacts: prevState.contacts.filter(contact => console.log(contact.name)),
-  //   }));
-  // };
 
   deleteContact = contactId => {
     this.setState(prevState => ({
@@ -53,10 +44,10 @@ export class App extends React.Component {
     return (
       <>
         <h1>Phonebook</h1>
-        <Form onSubmit={this.addContact} onHandleCompare={this.handleCompare}/>
+        <Form onSubmit={this.addContact}/>
         <h2>Contacts</h2>
         <Filtr value={this.filter} onChange={this.changeFilter} />
-        <ContactsList contactsList={visibleContacts} onDeleteContact={this.deleteContact} x/>
+        <ContactsList contactsList={visibleContacts} onDeleteContact={this.deleteContact} />
       </>
     );
   }
