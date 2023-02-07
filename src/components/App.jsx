@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 import Form from './Form/Form';
 import Filtr from './Filtr/Filtr';
@@ -42,13 +43,13 @@ export class App extends React.Component {
       contactEl.name.toLowerCase().includes(normalizedFiltr)
     );
     return (
-      <>
+      <div className="App">
         <h1>Phonebook</h1>
         <Form onSubmit={this.addContact}/>
-        <h2>Contacts</h2>
+        <h2 className="secondTitle">Contacts</h2>
         <Filtr value={this.filter} onChange={this.changeFilter} />
         <ContactsList contactsList={visibleContacts} onDeleteContact={this.deleteContact} />
-      </>
+        </div>
     );
   }
 }
