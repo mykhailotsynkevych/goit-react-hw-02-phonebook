@@ -4,7 +4,7 @@
 }
 
 .wrap {
-        width: 300px;
+        width: 100%;
         padding-top: 20px;
             margin: 5px;
             display: flex;
@@ -22,9 +22,12 @@
 .list {
     margin: 0px;
     padding: 0px;
+    font-size: 20px;
 
 }
 
 .button {
     margin-left: auto;
+    font-size: 16px;
+    
 }
